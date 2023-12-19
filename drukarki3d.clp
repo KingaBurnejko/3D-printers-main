@@ -215,7 +215,6 @@
                      (text "Do you need a dual extruder?")
                      (options "Yes" "No"))))
 					 
-;DO POPRAWIENIA!
 ;Reguła dla wyboru "No" w przypadku pytania o "Dual Extruder"
 (defrule ease-of-use-not-affordable-maker-bot-clone-not-dual-extruder
    ?f <- (answer (id ease-of-use-not-affordable-maker-bot-clone-dual-extruder) (value "No"))
