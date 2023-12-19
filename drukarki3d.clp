@@ -67,7 +67,7 @@
                      (text "Do you also need affordability?")
                      (options "Yes" "No"))))
 
-; Reguły dla wyboru "Yes" i "No" na pytanie o "Modability"
+;Reguła dla wyboru "Yes" na pytanie o "Affordability"
 (defrule modability-affordable
    ?f <- (answer (id modability) (value "Yes"))
    =>
@@ -76,6 +76,7 @@
                      (text "DIY kit or assembled machine?")
                      (options "Kit" "Assembled"))))
 
+;Reguła dla wyboru "No" na pytanie o "Affordability"
 (defrule modability-not-affordable
    ?f <- (answer (id modability) (value "No"))
    =>
@@ -96,28 +97,28 @@
 
 ;Reguła dla wyboru "Assembled" w przypadku odpowiedzi "Yes" na pytanie o "Affordability"
 (defrule modability-affordable-assembled
-   ?f <- (answer (id modability-affordable-assembled) (value "Assembled"))
+   ?f <- (answer (id modability-affordable) (value "Assembled"))
    =>
    (retract ?f)
    (assert (printer (name "Robo3D"))))
 
 ;Reguła dla wyboru "Kit" w przypadku odpowiedzi "No" na pytanie o "Affordability"
 (defrule modability-not-affordable-kit
-   ?f <- (answer (id modability-not-affordable-kit) (value "Kit"))
+   ?f <- (answer (id modability-not-affordable) (value "Kit"))
    =>
    (retract ?f)
    (assert (printer (name "Lulzbot KITTAZ"))))
 
 ;Reguła dla wyboru "Assembled" w przypadku odpowiedzi "No" na pytanie o "Affordability"
 (defrule modability-not-affordable-assembled
-   ?f <- (answer (id modability-not-affordable-assembled) (value "Assembled"))
+   ?f <- (answer (id modability-not-affordable) (value "Assembled"))
    =>
    (retract ?f)
    (assert (printer (name "Lulzbot TAZ 4"))))
 
 ;Reguła dla wyboru "Speed" w przypadku odpowiedzi "Kit"  
 (defrule modability-affordable-kit-speed
-   ?f <- (answer (id modability-affordable-kit-speed) (value "Speed"))
+   ?f <- (answer (id modability-affordable-kit) (value "Speed"))
    =>
    (retract ?f)
    (assert (printer (name "Velleman K8200"))))
