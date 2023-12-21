@@ -23,12 +23,11 @@ Setup and Execution
 -------------------
 
 1.  Ensure Python 3.x is installed on your system.
-2.  Install the CLIPS Python module `pip install clips` if it's not already installed.
-
-3.  Place both `interface.py` and `drukarki3d.clp` in the same directory.
-4.  Run `interface.py` using Python `python interface.py`
-
-5.  The GUI will launch, and you can interact with the expert system.
+2.  Install the CLIPS Python module `pip install clipspy` if it's not already installed.
+3.  Make sure that you have installed Tkinter, if not, then run `pip install tk`.
+4.  Place both `interface.py` and `drukarki3d.clp` in the same directory.
+5.  Run `interface.py` using Python `python interface.py`
+6.  The GUI will launch, and you can interact with the expert system.
 
 How It Works
 ------------
